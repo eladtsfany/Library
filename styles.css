@@ -1,0 +1,25 @@
+body {
+    background-color: lightgray;
+    margin: 0;
+    text-align: center;
+}
+
+.library {
+    margin: 0 auto;
+    min-height: 300px;
+    width: 80%;
+    background-color: #fff;
+}
+
+.library table {
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.library table tr,
+.library table th,
+.library table td {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
