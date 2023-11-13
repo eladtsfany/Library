@@ -25,6 +25,10 @@ const harry_potter = new Book('Harry Potter', 'J.K Rowling', 446, false).addBook
 const mr_moonie = new Book("Elad's Life", 'Elad Tsfany', 114, true).addBookToLibrary();
 const wizard_of_oz = new Book('The Wonderful Wizard of Oz', 'L. Frank Baum', 272, false).addBookToLibrary();
 const rich_poor_dad = new Book('Rich Dad, Poor Dad', 'Robert T. Kiyosaki', 336, true).addBookToLibrary();
+// Add 35 temporary test books:
+for (let i = 1; i < 36; i++) {
+    const temp = new Book(`Temp #${i}`, 'Temp Robot', i, true).addBookToLibrary();
+}
 
 // prototype checks
 // console.log(Object.getPrototypeOf(harry_potter) === Book.prototype);
@@ -46,16 +50,35 @@ function viewLibrary() {
         const author_td = document.createElement('td');
         const pages_td = document.createElement('td');
         const isRead_td = document.createElement('td');
+        const remove_btn = document.createElement('button');
+        const remove_btn_td = document.createElement('td');
+        //creating table data cells
         title_td.textContent = book.title;
         author_td.textContent = book.author;
         pages_td.textContent = book.page_count;
         isRead_td.textContent = book.isRead;
+        remove_btn.textContent = '-';
+        //adding classes to relevant cells
+        pages_td.classList.add('centered');
+        isRead_td.classList.add('centered');
+        remove_btn.classList.add('remove-btn');
+        remove_btn_td.className = 'last-cell centered '
+        //event listeners
+        remove_btn.addEventListener('click', removeRow);
+        remove_btn_td.appendChild(remove_btn);
         tr.appendChild(title_td);
         tr.appendChild(author_td);
         tr.appendChild(pages_td);
         tr.appendChild(isRead_td);
+        tr.appendChild(remove_btn_td);
         library.appendChild(tr);
     })
+}
+
+function removeRow(event) {
+    // tr>td>button // parent>parent>this
+    const parentRow = event.target.parentElement.parentElement;
+    parentRow.parentNode.removeChild(parentRow);
 }
 
 viewLibrary();
