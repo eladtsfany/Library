@@ -8,21 +8,62 @@
 </head>
 
 <body>
-    <div class="library">
-        <h3>Book Library</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Pages Count</th>
-                    <th>Is read?</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
+    <div class="container">
+        <div class="header">
+            <h3 class="header-title">Book Library</h3>
+            <div class="profile">
+                <div>Bell</div>
+                <div class="avatar">Avatar</div>
+                <div>USER NAME</div>
+            </div>
+        </div>
+        <div class="left-side">
+            <div class="library">
+                <table>
+                    <col width="45%">
+                    <col width="27%">
+                    <col width="11%">
+                    <col width="11%">
+                    <col width="6%">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="left-aligned">Title</th>
+                            <th scope="col" class="left-aligned">Author</th>
+                            <th scope="col">Pages</th>
+                            <th scope="col">Finish</th>
+                            <th scope="col" class="last-cell"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="right-main">
+                <div class="buttons-wrapper">
+                    <button type="button">Add book</button>
+                    <button type="button">Filter books</button>
+                    <button type="button">Suggested books</button>
+                </div>
+                <!-- this section will contain the wanted button action -->
+                <div class="content-box">
 
+                </div>
+                <!-- <div class="form-wrapper">
+                <form action="#">
+                    <div class="text">Add book</div>
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </form>
+            </div> -->
+
+            </div>
+        </div>
+        <div class="footer">&copy; This library was made by
+            <a href="https://github.com/eladtsfany">[GITHUB] Elad Tsfany</a>
+        </div>
+    </div>
     <script src="javascript.js"></script>
 </body>
 
