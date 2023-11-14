@@ -81,6 +81,69 @@ function removeRow(event) {
     parentRow.parentNode.removeChild(parentRow);
 }
 
+// Handling right side dialogs:
+const dialog_add = document.getElementById('dialog-add');
+const dialog_add_btn = document.querySelector('button.dialog-add-btn');
+const dialog_filter = document.getElementById('dialog-filter');
+const dialog_filter_btn = document.querySelector('button.dialog-filter-btn');
+const dialog_suggested = document.getElementById('dialog-suggested');
+const dialog_suggested_btn = document.querySelector('button.dialog-suggested-btn');
+
+
+// Toggle dialogs:
+dialog_add_btn.addEventListener('click', () => {
+    // if open then close it.
+    if (dialog_add.open) {
+        dialog_add.close();
+        console.log("Add book dialog closed");
+    }
+    // if not then close any others shown and open this
+    else {
+        if (dialog_filter.open || dialog_suggested.open) {
+            dialog_filter.open ? dialog_filter.close() : dialog_suggested.close();
+            console.log("Closed current open dialog");
+        }
+        dialog_add.show();
+        console.log("Add book dialog open");
+    }
+});
+
+dialog_filter_btn.addEventListener('click', () => {
+    // if open then close it.
+    if (dialog_filter.open) {
+        dialog_filter.close();
+        console.log("Filter books dialog closed");
+    }
+    // if not then close any others shown and open this
+    else {
+        if (dialog_add.open || dialog_suggested.open) {
+            dialog_add.open ? dialog_add.close() : dialog_suggested.close();
+            console.log("Closed current open dialog");
+        }
+        dialog_filter.show();
+        console.log("Filter books dialog open");
+    }
+
+});
+
+dialog_suggested_btn.addEventListener('click', () => {
+    // if open then close it.
+    if (dialog_suggested.open) {
+        dialog_suggested.close();
+        console.log("Suggested books dialog closed");
+    }
+    // if not then close any others shown and open this
+    else {
+        if (dialog_filter.open || dialog_add.open) {
+            dialog_add.open ? dialog_add.close() : dialog_filter.close();
+            console.log("Closed current open dialog");
+        }
+        dialog_suggested.show();
+        console.log("Suggested books dialog open");
+    }
+});
+
+
 viewLibrary();
 
 
