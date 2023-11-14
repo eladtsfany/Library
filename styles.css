@@ -144,13 +144,12 @@ h3.header-title {
     padding: .75em;
     display: grid;
     grid-template-rows: 1fr 4fr;
-    gap: .25em;
 }
 
 .right-side button {
     font-size: 1.125em;
     height: 46px;
-    width: 120px;
+    width: 112px;
     border: 1px solid #3f3f3f;
     border-radius: 6px;
     cursor: pointer;
@@ -158,8 +157,8 @@ h3.header-title {
 
 .right-side button:hover {
     background-color: #cfcfcf;
+    border: 2px solid #3f3f3f;
 }
-
 
 .buttons-wrapper {
     display: flex;
@@ -167,9 +166,32 @@ h3.header-title {
     align-items: center;
 }
 
-.right-side .content-box {
+.content-box {
     background-color: #fff;
 }
+
+.content-box dialog {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#dialog-add {
+    background-color: #afafaf;
+}
+
+#dialog-filter {
+    background-color: bisque;
+}
+
+#dialog-suggested {
+    background-color: darkslategray;
+}
+
+
 
 /* .right-side form { */
 /* background-color: #efefef; */
