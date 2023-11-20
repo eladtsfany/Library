@@ -56,7 +56,7 @@
                         <form action="dialog">
                             <div class="form-title">
                                 <label for="input_title">Title</label>
-                                <input id="input-title" name="input_title" type="text">
+                                <input id="input-title" name="input_title" type="text" pattern="^\w\D{2,}">
                             </div>
                             <div class="form-author">
                                 <label for="input_author">Author</label>
@@ -92,7 +92,7 @@
         </div>
         <div class="footer">
             <span style="font-size:1.125em;padding-right:0.25em;">&copy;</span>This library was made by:
-            <a href="https://github.com/eladtsfany">
+            <a style="display: flex; align-content: center;" href="https://github.com/eladtsfany">
                 <img src="https://cdn-icons-png.flaticon.com/512/25/25657.png" alt="github_logo"> Elad Tsfany
             </a>
         </div>

@@ -299,11 +299,13 @@ dialog form {
 #dialog-add form input {
     width: 80%;
     font-size: 1.25rem;
-    padding: .375em;
+    padding: 0.5em;
+    border-radius: 1rem;
 }
 
 #dialog-add .form-title>input {
     width: 95%;
+    height: 2em;
 }
 
 #dialog-add .form-finished input {
@@ -311,16 +313,17 @@ dialog form {
     width: 1.125rem;
 }
 
-
 #dialog-add form label {
     display: block;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
 }
 
 #dialog-add .form-finished label {
     display: inline-block;
-    font-size: 1.25em;
+    font-size: 1.5rem;
 }
-
 
 .form-buttons {
     grid-column: 2 span;
@@ -342,6 +345,7 @@ dialog form {
     grid-column: 2 span;
     grid-row: 3/4;
     display: flex;
+    align-content: center;
     align-items: center;
     justify-content: center;
     background-color: #fff;
@@ -349,14 +353,16 @@ dialog form {
 }
 
 .footer img {
-    width: 1em;
+    width: 0.875rem;
     align-self: center;
+    padding-right: 0.125em;
 }
 
 .footer a {
     text-decoration: none;
     color: #1f1f1f;
     padding-left: 0.5em;
+    font-size: 1.125rem;
 }
 
 .footer a:hover {
