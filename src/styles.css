@@ -207,7 +207,6 @@ div.avatar img {
 .right-main {
     height: clamp(400px, 68vh, 550px);
     padding: 2em;
-    height: 68vh;
     display: grid;
     grid-template-rows: 1fr 5fr;
 }
