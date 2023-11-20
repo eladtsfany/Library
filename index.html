@@ -18,18 +18,18 @@
                 </div>
                 <div class="profile-right">
                     <div><img src="src/images/bell_465350.png" alt="bell_logo"></div>
-                    <div><img src="src/images/cog-svgrepo-com.svg" alt="bell_logo"></div>
+                    <div><img class="cog" src="src/images/cog-svgrepo-com.svg" alt="bell_logo"></div>
                 </div>
             </div>
         </div>
         <div class="left-side">
             <div class="library">
                 <table>
-                    <col width="45%">
-                    <col width="27%">
-                    <col width="11%">
-                    <col width="11%">
-                    <col width="6%">
+                    <col width="43%">
+                    <col width="26%">
+                    <col width="12%">
+                    <col width="12%">
+                    <col width="7%">
                     <thead>
                         <tr>
                             <th scope="col" class="left-aligned">Title</th>
@@ -52,26 +52,49 @@
                 </div>
                 <!-- this section will contain the wanted button section/dialog -->
                 <div class="content-box">
-                    <dialog id="dialog-add">
+                    <dialog id="dialog-add" open>
                         <form action="dialog">
-
+                            <div class="form-title">
+                                <label for="input_title">Title</label>
+                                <input id="input-title" name="input_title" type="text">
+                            </div>
+                            <div class="form-author">
+                                <label for="input_author">Author</label>
+                                <input id="input-author" name="input_author" type="text">
+                            </div>
+                            <div class="form-pages">
+                                <label for="input_pages">Pages #</label>
+                                <input id="input-pages" name="input_pages" type="number">
+                            </div>
+                            <div class="form-finished">
+                                <label for="input_read">Already read?</label>
+                                <input id="input-read" name="input_read" type="checkbox">
+                            </div>
+                            <div class="form-buttons">
+                                <button type="submit">Submit</button>
+                                <button type="reset">Clear</button>
+                            </div>
                         </form>
                     </dialog>
                     <dialog id="dialog-filter">
                         <form action="dialog">
-
+                            <H1>CURRENTLY IN DEVELOPMENT</H1>
                         </form>
                     </dialog>
                     <dialog id="dialog-suggested">
                         <form action="dialog">
+                            <H1>CURRENTLY IN DEVELOPMENT</H1>
 
                         </form>
                     </dialog>
                 </div>
             </div>
         </div>
-        <div class="footer">&copy; This library was made by
-            <a href="https://github.com/eladtsfany">[GITHUB] Elad Tsfany</a>
+        <div class="footer">
+            <span style="font-size:1.125em;padding-right:0.25em;">&copy;</span>This library was made by:
+            <a href="https://github.com/eladtsfany">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25657.png" alt="github_logo"> Elad Tsfany
+            </a>
         </div>
     </div>
     <script src="src/javascript.js"></script>

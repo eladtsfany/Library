@@ -23,7 +23,7 @@ body {
 }
 
 .header h3,
-button {
+.right-side button {
     color: black;
     font-weight: normal;
     text-transform: uppercase;
@@ -42,7 +42,7 @@ th {
     height: 100vh;
     display: grid;
     grid-template-columns: 3fr 2fr;
-    grid-template-rows: 3fr 10fr 1fr;
+    grid-template-rows: 3fr 8fr 1fr;
 }
 
 .header {
@@ -54,9 +54,7 @@ th {
     /* justify-content: center; */
     justify-content: space-between;
     font-size: 1.5rem;
-    padding: 0 3em 0 10vw;
-
-
+    padding: 0 3em 0 8vw;
 }
 
 h3.header-title {
@@ -67,12 +65,15 @@ h3.header-title {
 .header-profile {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     gap: clamp(30px, 4vw, 100px);
 }
 
 .header-profile img {
-    width: 1.125em;
+    width: 1em;
+}
+
+.header-profile img.cog {
+    width: 1.25em;
 }
 
 .profile-left,
@@ -103,7 +104,7 @@ div.avatar img {
 }
 
 .library {
-    width: 90%;
+    width: 95%;
     display: flex;
     background-color: #fff;
     padding: 0.75em;
@@ -113,6 +114,7 @@ div.avatar img {
     align-items: start;
     justify-content: center;
     overflow: auto;
+    font-size: 1.125em;
 
 }
 
@@ -143,16 +145,18 @@ div.avatar img {
 .library table thead tr th {
     background-color: #7fcfdf;
     border-bottom: 1px solid black;
-    border-right: 1px dotted black;
     z-index: 1;
     position: sticky;
     top: 0;
     font-size: 1.375em;
 }
 
+.library table tbody tr:nth-child(odd) {
+    background: rgb(230, 230, 230, 0.4);
+}
+
 .library table td {
-    border-top: 1px dotted black;
-    border-right: 1px dotted black;
+    border-top: 1px dotted #afafaf;
     overflow: hidden;
     text-overflow: ellipsis;
     border-radius: 4px;
@@ -166,8 +170,8 @@ div.avatar img {
 }
 
 .library table .last-cell {
-    border-right: 0;
-    text-overflow: none;
+    /* border-right: 0; */
+    text-overflow: initial;
 }
 
 .library table th,
@@ -192,26 +196,30 @@ div.avatar img {
 }
 
 .remove-btn:hover {
-    transform: scale3d(2, 1.1, 1);
+    transform: scale3d(2, 1.05, 1);
     transition: transform .20s ease-in-out;
 }
 
 .right-side {
-    padding: 2em;
     box-shadow: rgba(0, 0, 0, 0.16) -3px 3px 8px;
 }
 
 .right-main {
-    height: clamp(200px, 65vh, 600px);
-    padding: .75em;
+    height: clamp(400px, 68vh, 550px);
+    padding: 2em;
+    height: 68vh;
     display: grid;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+.right-main>* {
+    padding: 1em;
 }
 
 .right-side button {
     font-size: 1.125em;
     height: 46px;
-    width: 112px;
+    width: clamp(112px, 8vw, 156px);
     border: 1px solid #3f3f3f;
     border-radius: 6px;
     cursor: pointer;
@@ -224,7 +232,7 @@ div.avatar img {
 
 .buttons-wrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -241,8 +249,86 @@ div.avatar img {
     border: 1px solid black;
 }
 
+dialog {
+    border-radius: 10%;
+}
+
+dialog form {
+    padding: 1rem;
+}
+
 #dialog-add {
     background-color: #afafaf;
+    display: flex;
+
+}
+
+#dialog-add form {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 2fr 2fr 1fr 2fr;
+    align-items: center;
+}
+
+.form-title {
+    grid-column: 2 span;
+}
+
+.form-finished {
+    grid-column: 2 span;
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.form-author {
+    grid-column: 1/2;
+}
+
+.form-pages {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#dialog-add button {
+    width: 160px;
+    height: 80px;
+    font-size: 1.5em;
+    border-radius: 60px;
+}
+
+#dialog-add form input {
+    width: 80%;
+    font-size: 1.25rem;
+    padding: .375em;
+}
+
+#dialog-add .form-title>input {
+    width: 95%;
+}
+
+#dialog-add .form-finished input {
+    height: 1.125rem;
+    width: 1.125rem;
+}
+
+
+#dialog-add form label {
+    display: block;
+}
+
+#dialog-add .form-finished label {
+    display: inline-block;
+    font-size: 1.25em;
+}
+
+
+.form-buttons {
+    grid-column: 2 span;
+    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
 }
 
 #dialog-filter {
@@ -261,4 +347,19 @@ div.avatar img {
     justify-content: center;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.16) 0px -1px 4px;
+}
+
+.footer img {
+    width: 1em;
+    align-self: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #1f1f1f;
+    padding-left: 0.5em;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
