@@ -264,6 +264,11 @@ dialog form {
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 2fr 2fr 1fr 2fr;
     align-items: center;
+    border-radius: inherit;
+}
+
+#dialog-add form>div {
+    border-radius: inherit;
 }
 
 .form-title {
@@ -274,7 +279,7 @@ dialog form {
     grid-column: 2 span;
     display: flex;
     align-items: center;
-    gap: 0.2em;
+    gap: 0.25em;
 }
 
 .form-author {
@@ -286,18 +291,36 @@ dialog form {
     grid-row: 2/3;
 }
 
-#dialog-add button {
-    width: 160px;
-    height: 80px;
-    font-size: 1.5em;
-    border-radius: 60px;
+#dialog-add form button {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: inherit;
+    padding: 1em 0;
+    flex-grow: 1;
 }
+
+#dialog-add form button:hover {
+    transform: none;
+    background: none;
+    border: 1px solid;
+}
+
+.form-buttons {
+    border-radius: inherit;
+    grid-column: 2 span;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
 
 #dialog-add form input {
     width: 80%;
     font-size: 1.25rem;
     padding: 0.5em;
-    border-radius: 1rem;
+    border-radius: inherit;
 }
 
 #dialog-add .form-title>input {
@@ -315,20 +338,15 @@ dialog form {
     padding-left: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 1.25rem;
+    text-wrap: nowrap;
 }
 
 #dialog-add .form-finished label {
     display: inline-block;
     font-size: 1.5rem;
+    padding: 0;
 }
 
-.form-buttons {
-    grid-column: 2 span;
-    display: flex;
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-}
 
 #dialog-filter {
     background-color: bisque;
