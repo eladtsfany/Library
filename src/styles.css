@@ -51,7 +51,6 @@ th {
     grid-column: 2 span;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     justify-content: space-between;
     font-size: 1.5rem;
     padding: 0 3em 0 8vw;
@@ -236,7 +235,7 @@ div.avatar img {
 }
 
 .content-box {
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 .content-box dialog {
@@ -245,11 +244,10 @@ div.avatar img {
     padding: 0;
     height: 100%;
     width: 100%;
-    border: 1px solid black;
-}
-
-dialog {
-    border-radius: 10%;
+    border: 2px solid #51bcd1;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 dialog form {
@@ -257,9 +255,8 @@ dialog form {
 }
 
 #dialog-add {
-    background-color: #afafaf;
+    background-color: #7fcfdf;
     display: flex;
-
 }
 
 #dialog-add form {

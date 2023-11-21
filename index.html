@@ -56,15 +56,19 @@
                         <form action="dialog">
                             <div class="form-title">
                                 <label for="input_title">Title</label>
-                                <input id="input-title" name="input_title" type="text" pattern="^\w\D{2,}">
+                                <input id="input-title" name="input_title" type="text"
+                                    title="Minimum 3 characters required" minlength="3" required>
+                                <!-- pattern="^\w\D{2,}" -->
                             </div>
                             <div class="form-author">
                                 <label for="input_author">Author</label>
-                                <input id="input-author" name="input_author" type="text">
+                                <input id="input-author" name="input_author" type="text"
+                                    title="Minimum 3 characters required" minlength="3" required>
                             </div>
                             <div class="form-pages">
                                 <label for="input_pages">Pages #</label>
-                                <input id="input-pages" name="input_pages" type="number">
+                                <input id="input-pages" name="input_pages" type="number"
+                                    title="Please enter book pages count" minlength="1" required>
                             </div>
                             <div class="form-finished">
                                 <label for="input_read">Already read?</label>
