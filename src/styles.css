@@ -28,6 +28,7 @@ body {
     font-weight: normal;
     text-transform: uppercase;
     font-family: Pixeboy;
+    padding: .125rem;
 }
 
 th {
@@ -262,7 +263,7 @@ dialog form {
 }
 
 #dialog-add {
-    background-color: #7fcfdf;
+    background: linear-gradient(0.35turn, #45c3d1, #7a8fdf, #7fcfdf);
     display: flex;
 }
 
@@ -309,9 +310,8 @@ dialog form {
 }
 
 #dialog-add form button:hover {
-    transform: none;
     background: none;
-    border: 1px solid;
+    border: 2px solid black;
 }
 
 .form-buttons {
@@ -385,8 +385,11 @@ dialog form {
     color: #1f1f1f;
     padding-left: 0.5em;
     font-size: 1.125rem;
+    padding: .375rem;
+    border-radius: 4px;
 }
 
 .footer a:hover {
     text-decoration: underline;
+    background-color: #dfdfdf;
 }
