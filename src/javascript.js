@@ -151,63 +151,6 @@ dialog_filter_btn.addEventListener('click', () => { toggleDialog(dialog_filter) 
 dialog_suggested_btn.addEventListener('click', () => { toggleDialog(dialog_suggested) });
 
 
-
-// dialog_add_btn.addEventListener('click', () => {
-//     if (dialog_add.open) console.log("Add book dialog alrady opened");
-//     // If not, close any other open dialogs and open this:
-//     else {
-//         if (dialog_filter.open) {
-//             dialog_filter.style.display = 'none';
-//             dialog_filter.close();
-//             console.log("Filter book dialog closed");
-//         }
-//         else {
-//             dialog_suggested.style.display = 'none';
-//             dialog_suggested.close();
-//             console.log("Suggested books dialog closed");
-//         }
-//         dialog_add.show();
-//         dialog_add.style.display = 'flex';
-//         console.log("Add book dialog open");
-//     }
-// });
-// dialog_filter_btn.addEventListener('click', () => {
-//     if (dialog_filter.open) console.log("Filter book dialog alrady opened");
-//     else {
-//         if (dialog_add.open) {
-//             dialog_add.style.display = 'none';
-//             dialog_add.close();
-//             console.log("Add book dialog closed");
-//         }
-//         else {
-//             dialog_suggested.style.display = 'none';
-//             dialog_suggested.close();
-//             console.log("Suggested books dialog closed");
-//         }
-//         dialog_filter.show();
-//         dialog_filter.style.display = 'block';
-//         console.log("Filter books dialog open");
-//     }
-// });
-// dialog_suggested_btn.addEventListener('click', () => {
-//     if (dialog_suggested.open) console.log("Suggested books dialog already opened");
-//     else {
-//         if (dialog_add.open) {
-//             dialog_add.style.display = 'none';
-//             dialog_add.close();
-//             console.log("Add book dialog closed");
-//         }
-//         else {
-//             dialog_filter.style.display = 'none';
-//             dialog_filter.close();
-//             console.log("Filter books dialog closed");
-//         }
-//         dialog_suggested.show();
-//         dialog_suggested.style.display = 'block';
-//         console.log("Suggested books dialog open");
-//     }
-// });
-
 const form = dialog_add.querySelector("form[action='dialog']");
 const form_submit_btn = form.querySelector("button[type='submit']");
 form_submit_btn.addEventListener('click', addInputBook);
