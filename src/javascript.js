@@ -1,14 +1,24 @@
-
 const myLibrary = [];
 
-function Book(title, author, page_count, is_read) {
-    this.title = title; // string
-    this.author = author; // string
-    this.page_count = page_count; // number
-    this.isRead = is_read; // bool
+class Book {
+    constructor(title, author, page_count, is_read) {
+        this.title = title; // string
+        this.author = author; // string
+        this.page_count = page_count; // number
+        this.isRead = is_read; // bool
 
-    this.info = () => `${title} by ${author}, ${page_count} pages, ${is_read ? "already read" : "not read yet"}.`
+        this.info = () => `${title} by ${author}, ${page_count} pages, ${is_read ? "already read" : "not read yet"}.`
+    }
+    get info() { return this.info };
 }
+// function Book(title, author, page_count, is_read) {
+//     this.title = title; // string
+//     this.author = author; // string
+//     this.page_count = page_count; // number
+//     this.isRead = is_read; // bool
+
+//     this.info = () => `${title} by ${author}, ${page_count} pages, ${is_read ? "already read" : "not read yet"}.`
+// }
 
 // An outer function that adding a book to the library
 function addBookToLibrary(book) {
@@ -209,7 +219,7 @@ function addInputBook(e) {
         alert('FORM VALIDATION FAILED');
         console.log('FORM VALIDATION FAILED');
         //checks
-        
+
     }
 }
 
