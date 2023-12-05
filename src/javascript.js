@@ -1,6 +1,5 @@
 
 class Book {
-
     constructor(title, author, pageCount, isRead) {
         this.title = title; // string
         this.author = author; // string
@@ -21,9 +20,7 @@ class Book {
 }
 
 class Library {
-
     constructor() {
-        // prev was myLibrary (represent array of books)
         this.books = [];
         // the DOM element to insert the library into
         this.tableElement = document.querySelector('.library table tbody');
@@ -78,7 +75,7 @@ class Library {
             remove_btn.classList.add('remove-btn');
             remove_btn_td.className = 'last-cell centered';
             //event listeners
-            remove_btn.addEventListener('click', myLibrary.removeBook);
+            remove_btn.addEventListener('click', (e) => { myLibrary.removeBook(e) });
             remove_btn_td.appendChild(remove_btn);
             tr.appendChild(title_td);
             tr.appendChild(author_td);
@@ -104,9 +101,6 @@ tempBooks.forEach(book => { myLibrary.addBookToLibrary(book) });
 // for (let i = 1; i < 11; i++) {
 //     myLibrary.addBookToLibrary(new Book(`Temp #${i}`, 'Temp Robot', i, true));
 // }
-
-
-
 
 // Handling dialogs:
 const dialog_add = document.getElementById('dialog-add');
