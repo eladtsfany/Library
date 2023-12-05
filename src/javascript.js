@@ -19,10 +19,10 @@ Book.prototype.addBookToLibrary = function () {
     myLibrary.push(this);
 }
 
-const harry_potter = new Book('Harry Potter', 'J.K Rowling', 446, false).addBookToLibrary();
-const mr_moonie = new Book("Elad's Life", 'Elad Tsfany', 114, true).addBookToLibrary();
-const wizard_of_oz = new Book('The Wonderful Wizard of Oz', 'L. Frank Baum', 272, false).addBookToLibrary();
-const rich_poor_dad = new Book('Rich Dad, Poor Dad', 'Robert T. Kiyosaki', 336, true).addBookToLibrary();
+const book1 = new Book('Harry Potter', 'J.K Rowling', 446, false).addBookToLibrary();
+const book2 = new Book("Elad's Life", 'Elad Tsfany', 114, true).addBookToLibrary();
+const book3 = new Book('The Wonderful Wizard of Oz', 'L. Frank Baum', 272, false).addBookToLibrary();
+const book4 = new Book('Rich Dad, Poor Dad', 'Robert T. Kiyosaki', 336, true).addBookToLibrary();
 
 // // Add 15 temporary test books:
 // for (let i = 1; i < 16; i++) {
@@ -85,10 +85,8 @@ function clearTable() {
 function removeBook(event) {
     console.log(event.target.parentElement.parentElement.firstChild);
     const row_title = event.target.parentElement.parentElement.firstChild.textContent;
-    console.log(myLibrary);
     const book_index = myLibrary.findIndex(book => (book.title === row_title));
     myLibrary.splice(book_index, 1);
-    console.log(myLibrary);
 
     // logic : tr>td>button // parent>parent>this
     const parentRow = event.target.parentElement.parentElement;
@@ -141,11 +139,9 @@ dialog_filter_btn.addEventListener('click', () => {
     }
     else {
         if (dialog_add.open) {
-            // if not then close any others shown and open this
-            // dialog_add.style.display = 'none';
-            // dialog_add.close();
-            // console.log("Add book dialog closed");
-            console.log("Add book dialog already opened");
+            dialog_add.style.display = 'none';
+            dialog_add.close();
+            console.log("Add book dialog closed");
         }
         else {
             dialog_suggested.style.display = 'none';
@@ -185,27 +181,36 @@ dialog_suggested_btn.addEventListener('click', () => {
     }
 });
 
-const form_submit_btn = dialog_add.querySelector("form button[type='submit']");
+const form = dialog_add.querySelector("form[action='dialog']");
+const form_submit_btn = form.querySelector("button[type='submit']");
 form_submit_btn.addEventListener('click', addInputBook);
 
 function addInputBook(e) {
     e.preventDefault();
-    //capture inputs 
-    const input_title = dialog_add.querySelector('form #input-title').value;
-    const input_author = dialog_add.querySelector('form #input-author').value;
-    const input_pages = dialog_add.querySelector('form #input-pages').value;
-    const input_read = dialog_add.querySelector('form #input-read').checked;
+    if (form.checkValidity()) {
+        //capture inputs 
+        const input_title = form.querySelector('#input-title').value;
+        const input_author = form.querySelector('#input-author').value;
+        const input_pages = form.querySelector('#input-pages').value;
+        const input_read = form.querySelector('#input-read').checked;
 
-    //create book
-    const inputBook = new Book(input_title, input_author, input_pages, input_read);
-    inputBook.info();
+        //create book
+        const inputBook = new Book(input_title, input_author, input_pages, input_read);
+        inputBook.info();
 
-    //add book to library
-    // inputBook.addBookToLibrary();
-    addBookToLibrary(inputBook);
+        //add book to library
+        // inputBook.addBookToLibrary();
+        addBookToLibrary(inputBook);
 
-    //show updated library
-    viewLibrary();
+        //show updated library
+        viewLibrary();
+    }
+    else {
+        alert('FORM VALIDATION FAILED');
+        console.log('FORM VALIDATION FAILED');
+        //checks
+        
+    }
 }
 
 viewLibrary();
