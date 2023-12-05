@@ -1,4 +1,3 @@
-
 const myLibrary = [];
 
 function Book(title, author, page_count, is_read) {
@@ -77,9 +76,7 @@ function viewLibrary() {
 }
 
 function clearTable() {
-    while (library.hasChildNodes()) {
-        library.removeChild(library.firstChild);
-    }
+    while (library.hasChildNodes()) library.removeChild(library.firstChild);
 }
 
 function removeBook(event) {
@@ -208,11 +205,12 @@ function addInputBook(e) {
     else {
         alert('FORM VALIDATION FAILED');
         console.log('FORM VALIDATION FAILED');
-        //checks
-        
+        // Check what failed and act accordingly
+
     }
 }
 
+// Show books collection inside the table:
 viewLibrary();
 
 
